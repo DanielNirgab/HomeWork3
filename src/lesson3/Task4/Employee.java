@@ -1,8 +1,9 @@
 package lesson3.Task4;
 
 public class Employee {
-    String firstName;
-    String secondName;
+    private String firstName;
+   private String secondName;
+  private int employeeItem = 0;
 
     public Employee(String firstName, String secondName) {
         this.firstName = firstName;
@@ -25,10 +26,14 @@ public class Employee {
         this.secondName = secondName;
     }
 
-    public void getItem (int countOfItem) {
+    public int getItem (int countOfItem) {
         if (VodkaHouse.issueItem(countOfItem)) {
             System.out.println("Ура я испортил водку!");
+            employeeItem += countOfItem;
         }
+        System.out.println("У работника в журнале " + employeeItem + " водки");
+        System.out.println("--------------------------------------------------");
+        return employeeItem;
     }
 
 

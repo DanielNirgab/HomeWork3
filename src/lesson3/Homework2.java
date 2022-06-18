@@ -60,11 +60,11 @@ public class Homework2 {
         HW2.changeElement(nums);
         // Задание №3:
         // Дано:
-        boolean hasFuel = true;
-        boolean hasElectricsProblem = true;
-        boolean hasMotorProblem = false;
+        boolean hasFuel = false;
+        boolean hasElectricsProblem = false;
+        boolean hasMotorProblem = true;
         boolean hasTransmissionProblem = true;
-        boolean hasWheelsProblem = true;
+        boolean hasWheelsProblem = false;
         // В автосервис приехала сломанная машина. Механики находят неисправность следующим способом:
         // Если у машины нет бензина и ничего не сломано, то отдают машину владельцу и берут 1000 рублей за консультацию.
         // Если у машины проблема с двигателем, то чинят и берут 10 000.
@@ -92,7 +92,8 @@ public class Homework2 {
         Employee ivan = new Employee("Ivan", "Petrov");
         ivan.getItem(4);
         petr.getItem(4);
-        vasya.getItem(5);
+        ivan.getItem(1);
+        vasya.getItem(3);
 
     }
 }

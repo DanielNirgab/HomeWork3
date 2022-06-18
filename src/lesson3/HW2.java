@@ -60,25 +60,32 @@ public class HW2 {
     public static void makeServiceBill (boolean hasFuel, boolean hasElectricsProblem, boolean hasMotorProblem,
                                         boolean hasTransmissionProblem, boolean hasWheelsProblem ) {
         int serviceBill = 0;
-        if (!hasFuel) {
+        int countOfProblems = 0;
+        if (!hasFuel && !hasElectricsProblem && !hasMotorProblem && !hasTransmissionProblem && !hasWheelsProblem) {
             serviceBill += 1000;
         }
         if (hasElectricsProblem) {
             serviceBill += 10_000;
+            countOfProblems++;
         }
         if (hasMotorProblem) {
             serviceBill += 5000;
+            countOfProblems++;
         }
         if (hasTransmissionProblem) {
             serviceBill += 4000;
+            countOfProblems++;
         }
         if (hasWheelsProblem) {
             serviceBill += 4000;
+            countOfProblems++;
         }
-        if (hasTransmissionProblem && (hasElectricsProblem || hasMotorProblem)) {
-            serviceBill -= serviceBill*0.2;
+        if (countOfProblems >= 2) {
+          double discount = serviceBill*0.2;
+            serviceBill -= discount;
+            System.out.println("Скидка " + discount);
         }
-        System.out.println(serviceBill);
+        System.out.println("Сумма по чеку в автосервисе: " + serviceBill);
 
     }
 
